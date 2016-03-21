@@ -575,6 +575,7 @@ FmmPreFSControl (
     case FSCTL_DISMOUNT_VOLUME:
     case FSCTL_LOCK_VOLUME:
 
+		DebugTrace(DEBUG_TRACE_ERROR,  ("[Fmm]: Pre FSCTL_DISMOUNT_VOLUME\n"));
 
         if (FmmTargetIsVolumeOpen( Cbd )) {
 
@@ -1240,6 +1241,8 @@ Return Value:
         //
         //  Teardown our instance because its no longer valid.
         //
+		DebugTrace(DEBUG_TRACE_ERROR, ("[Fmm]: Pre IRP_MN_SURPRISE_REMOVAL \n"));
+
 
         status = FltDetachVolume( Globals.Filter, FltObjects->Volume, NULL );
 

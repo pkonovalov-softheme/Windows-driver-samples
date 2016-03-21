@@ -497,7 +497,9 @@ Return Value:
     //  to any file system
     //
 
-    if (VolumeFilesystemType != FLT_FSTYPE_NTFS && VolumeFilesystemType != FLT_FSTYPE_FAT && VolumeFilesystemType != FLT_FSTYPE_REFS) {
+    if (VolumeFilesystemType != FLT_FSTYPE_NTFS && VolumeFilesystemType != FLT_FSTYPE_FAT && VolumeFilesystemType != FLT_FSTYPE_REFS
+		&& VolumeFilesystemType != FLT_FSTYPE_CSVFS)
+	{
 
         //
         //  An unknown file system is mounted which we do not care
